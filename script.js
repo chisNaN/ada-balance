@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', _ => {
         generalInfo.innerHTML += output.totalCbOutputs && `<br>Total received (thru): <b>${output.totalCbOutputs.toLocaleString('de-DE', formatADA)}</b> ${adaSVG}`
         generalInfo.innerHTML += `<br>Balance : <b>${mainAddressBalance.toLocaleString('de-DE', formatADA)}</b> ${adaSVG}`
         const totalWalletsBalance = mainAddressBalance + output.totalFromGeneratedWalletAddresses
-        generalInfo.innerHTML += `<br>Total balance for ALL addresses linked to the main address : <b>${totalWalletsBalance.toLocaleString('de-DE', formatADA)} </b> ${adaSVG}`
+        generalInfo.innerHTML += mainAddressBalance && `<br>Total balance for ALL addresses linked to the main address : <b>${totalWalletsBalance.toLocaleString('de-DE', formatADA)} </b> ${adaSVG}`
       } else {
         generalInfo.innerHTML += `<br>Balance : <b>${mainAddressBalance.toLocaleString('de-DE', formatADA)}</b> ${adaSVG}`
       }
