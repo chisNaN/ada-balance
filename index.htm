@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="icon" href="ada-big.png" sizes="any" type="image/svg+xml">
+    <meta charset="utf-8">
+    <title>Balance</title>
+    <style media="screen">
+      body{
+        font-family: verdana;
+        text-align: center;
+      }
+      img {
+        vertical-align: text-bottom;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        padding: 0.25rem;
+        text-align: left;
+        border: 1px solid #ccc;
+      }
+      tbody tr:nth-child(odd) {
+        background: #eee;
+      }
+    </style>
+    <script src="https://browser.sentry-cdn.com/4.5.3/bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+    Sentry.init({ dsn: 'https://cd2427570383467bbf7c010cb39e126e@sentry.io/1380564' })
+    </script>
+  </head>
+  <body>
+    <div id="main">
+      <a style="float: right;" href="https://github.com/chisnan/ada-balance" target="_blank"><img src="github-ico.png" style="width: 50px;" alt="Github"></a>
+      <h1><img src="ada-big.png" width="50px" alt=""> Balance</h1>
+      <h2></h2>
+      <h3 style="color: red; display: none;">An error occured, please open the console</h3>
+      <form id="the_form" method="post">
+        <input type="search" list="rich-list" id="address" style="width: 800px;" placeholder="ADA address" autofocus>
+        <datalist id="rich-list">
+        </datalist>
+        <button type="submit">Search</button>
+      </form>
+      <div id="results">
+        <table style="display: none;">
+          <thead>
+          <tr>
+              <th>Date transaction</th>
+              <th>New generated wallet address</th>
+              <th>Amount address</th>
+              <th>Sent amount</th>
+              <th>Destination address</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+        <div id="generalInfo"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
